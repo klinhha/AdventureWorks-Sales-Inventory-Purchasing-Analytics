@@ -1,4 +1,4 @@
-# Bicycle-Manufacturer-Analytics
+# AdventureWorks Sales, Inventory & Purchasing Analytics | SQL, Bigquery
 ## I. Introduction
 
 This project uses SQL and Google BigQuery to analyze the AdventureWorks2019 dataset, focusing on sales performance, product demand, customer retention, inventory management, and purchasing activities. By applying SQL techniques such as joins, common table expressions (CTEs), window functions, and cohort analysis, the project aims to uncover business trends and provide data-driven insights to support decision-making.
