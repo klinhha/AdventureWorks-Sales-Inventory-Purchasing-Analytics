@@ -1,37 +1,27 @@
 # Bicycle-Manufacturer-Analytics
-## I. Business Context
+## I. Introduction
 
-The business is facing key questions:
-
-- Which product categories are driving sales?
-
-- How is performance changing over time?
-
-- Which regions perform best?
-
-- Are discount campaigns effective?
-
-- How well are we managing inventory?
-
-- Are we retaining customers?
-
-=> This project answers those questions using **AdventureWorks2019 dataset on BigQuery**.
+This project uses SQL and Google BigQuery to analyze the AdventureWorks2019 dataset, focusing on sales performance, product demand, customer retention, inventory management, and purchasing activities. By applying SQL techniques such as joins, common table expressions (CTEs), window functions, and cohort analysis, the project aims to uncover business trends and provide data-driven insights to support decision-making.
 
 ## II. Objective
-
-Transform raw transactional data into actionable insights to:
-
-- Improve product performance
-- Optimize inventory management
-- Evaluate discount strategies
-- Understand customer retention
-- Support data-driven decision making
+- Analyze sales performance and product growth.
+- Identify top-performing sales territories.
+- Evaluate customer retention and repeat purchases.
+- Monitor inventory levels and stock-to-sales ratios.
+- Assess seasonal discount costs.
+- Track pending purchase orders and outstanding values.
 
 ## III. Tools Used
 - SQL (Google BigQuery)
 - AdventureWorks2019 Dataset
 
-## IV. Analysis Journey
+## IV. Data Access
+- Log in to your **Google Cloud Platform** account and create a new project.
+- Navigate to the **BigQuery console** and select your newly created project.
+- In the navigation panel, select **"Add Data"** and then **"Star a project by name"**.
+- Enter the project name **"adventurework2019"**.
+
+## V. Analysis Journey
 ### Query 1: Calc Quantity of items, Sales value & Order quantity by each Subcategory in L12M
 ``` sql
 SELECT FORMAT_DATE("%b %Y", a.ModifiedDate) period
@@ -320,6 +310,22 @@ group by 1, 2;
 - There were 224 pending purchase orders in 2014, with a combined value of approximately 3.87 million.
 - The outstanding value represents a substantial amount of purchasing commitments that had not reached a completed status in the analyzed data.
 - Monitoring these orders can help purchasing and finance teams track outstanding commitments, assess supplier delays, and improve cash-flow planning.
+
+## VI. Conclusions & Recommendations
+### 1. Conclusions
+- Sales performance: Product demand varied across subcategories, while Mountain Frames, Socks, and Road Frames recorded the strongest year-over-year quantity growth.
+- Regional contribution: Territories 4, 6, and 1 consistently ranked among the top three territories by order quantity.
+- Customer retention: Repeat purchasing activity varied by cohort, highlighting the need to monitor retention rates over time.
+- Inventory management: Large stock fluctuations and high stock-to-sales ratios may indicate opportunities to improve production planning and inventory control.
+- Financial monitoring: Seasonal discount costs increased in 2013, while pending purchase orders represented approximately 3.87 million in outstanding purchasing value.
+
+### 2. Recommendations
+- Optimize product strategy: Investigate the drivers of growth in Mountain Frames, Socks, and Road Frames, and align inventory and marketing plans with demand.
+- Strengthen territory performance: Analyze the sales drivers in Territories 4, 6, and 1, while investigating the decline in order quantities in 2014.
+- Improve customer retention: Track cohort retention percentages and develop targeted follow-up campaigns to encourage repeat purchases.
+- Enhance inventory control: Review products with high stock-to-sales ratios and use historical demand to improve replenishment and production decisions.
+- Evaluate promotional effectiveness: Compare incremental sales and gross profit against seasonal discount costs before expanding promotional activities.
+- Monitor purchasing commitments: Track pending purchase order values, order aging, and expected delivery dates to improve purchasing visibility and cash-flow management.
 
 
 
